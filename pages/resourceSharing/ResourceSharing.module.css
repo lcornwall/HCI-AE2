@@ -1,0 +1,103 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #333;
+    margin-left: 15px;
+}
+
+.video-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.video-container {
+    flex: 2;
+    margin-right: 20px;
+    display: flex;
+}
+
+.video-player {
+    width: 800px;
+    height: 450px;
+    border-radius: 12px;
+}
+
+.rating-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.student-count {
+    font-size: 1.5rem;
+    color: #45a098;
+}
+
+.rating-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rating-button {
+    padding: 15px 30px;
+    background-color: #afefe7;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 180px;
+    text-align: center;
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+.rating-button:hover {
+    background-color: #85c6bf;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #45a098;
+    width: 100%;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.footer-item {
+    text-align: center;
+    margin: 0 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-item p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.footer-icon {
+    font-size: 36px;
+}
+
+.footer-item:hover {
+    opacity: 0.8;
+}

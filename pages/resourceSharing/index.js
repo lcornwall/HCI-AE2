@@ -1,5 +1,9 @@
-export default function resourceSharing() {
+import ResourceSharing from './ResourceSharing';
+
+export default function Home() {
     return (
-        <h1> resourceSharing </h1>
-    )
-};
+        <div>
+            <ResourceSharing />
+        </div>
+    );
+}
