@@ -1,9 +1,9 @@
-import StudyGroups from './StudyGroups';
+import Courses from './Courses';
 
 export default function Home() {
     return (
         <div>
-            <StudyGroups />
+            <Courses />
         </div>
     );
 }

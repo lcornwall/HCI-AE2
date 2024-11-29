@@ -1,0 +1,85 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.studentTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.studentTable th,
+.studentTable td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.studentTable th {
+    background-color: #f4f4f4;
+}
+
+.selectedRow {
+    background-color: #83e0c4;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer p {
+    font-size: 16px;
+    color: #065a81;
+}
+
+.inviteButton {
+    padding: 10px 20px;
+    background-color: #afefe7;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.inviteButton:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.inviteButton:hover {
+    background-color: #85c6bf;
+}
+
+.popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
