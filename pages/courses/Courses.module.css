@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.course {
+    margin-bottom: 10px;
+}
+
+.courseBtn {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    background-color: #afefe7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.courseBtn:hover {
+    background-color: #85c6bf;
+}
+
+.dropdownContent {
+    display: block;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdownContent ul {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdownContent li {
+    padding: 8px 0;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.dropdownContent li:hover {
+    background-color: #eaeaea;
+}
