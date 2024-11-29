@@ -1,9 +1,9 @@
-import Link from 'next/link';
+import NavBar from '../../components/NavBar';
 import styles from './ResourceSharing.module.css';
-
 export default function ResourceSharing() {
     return (
         <div className={styles.container}>
+
             <h1 className={styles.h1}>Database Systems - Lecture 1</h1>
 
             <div className={styles['video-section']}>
@@ -27,21 +27,8 @@ export default function ResourceSharing() {
                     </div>
                 </div>
             </div>
-
-            <div className={styles.footer}>
-                <Link href="/courses" className={styles['footer-item']}>
-                    <span className={styles['footer-icon']}>📚</span>
-                    <p>Courses</p>
-                </Link>
-                <Link href="/resourceSharing" className={styles['footer-item']}>
-                    <span className={styles['footer-icon']}>🔗</span>
-                    <p>Resource Sharing</p>
-                </Link>
-                <Link href="/studyGroups" className={styles['footer-item']}>
-                    <span className={styles['footer-icon']}>💬</span>
-                    <p>Study Groups</p>
-                </Link>
-            </div>
+            <NavBar />
         </div>
     );
 }
+
