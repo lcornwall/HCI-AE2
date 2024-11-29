@@ -7,6 +7,8 @@ const Courses = () => {
         CS1001: false,
         CS1002: false,
         CS1003: false,
+        CS1004: false,
+        CS1005: false,
     });
 
     const handleDropdownToggle = (courseId) => {
@@ -72,6 +74,41 @@ const Courses = () => {
                     </div>
                 )}
             </div>
+
+            <div className={styles.course}>
+                <button
+                    className={styles.courseBtn}
+                    onClick={() => handleDropdownToggle('CS1004')}
+                >
+                    CS1004 Mobile HCI 2024/25
+                </button>
+                {openDropdowns.CS1004 && (
+                    <div className={styles.dropdownContent}>
+                        <ul>
+                            <li>Lecture 1</li>
+                            <li>Quiz 1</li>
+                        </ul>
+                    </div>
+                )}
+            </div>
+
+            <div className={styles.course}>
+                <button
+                    className={styles.courseBtn}
+                    onClick={() => handleDropdownToggle('CS1005')}
+                >
+                    CS1005 Artificial Intelligence 2024/25
+                </button>
+                {openDropdowns.CS1005 && (
+                    <div className={styles.dropdownContent}>
+                        <ul>
+                            <li>Lecture 1</li>
+                            <li>Quiz 1</li>
+                        </ul>
+                    </div>
+                )}
+            </div>
+
             <NavBar />
         </div>
     );
