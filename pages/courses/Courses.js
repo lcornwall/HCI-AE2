@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import styles from './Courses.module.css';
 import NavBar from '../../components/NavBar.js';
 
@@ -12,7 +13,7 @@ const Courses = () => {
     });
 
     const handleDropdownToggle = (courseId) => {
-        setOpenDropdowns(prevState => ({
+        setOpenDropdowns((prevState) => ({
             ...prevState,
             [courseId]: !prevState[courseId],
         }));
@@ -32,10 +33,18 @@ const Courses = () => {
                 {openDropdowns.CS1001 && (
                     <div className={styles.dropdownContent}>
                         <ul>
-                            <li>Lecture 1</li>
-                            <li>Quiz 1</li>
-                            <li>Lecture 2</li>
-                            <li>Quiz 2</li>
+                            <li>
+                                <Link href="/lecture">Lecture 1</Link>
+                            </li>
+                            <li>
+                                <Link href="/lecture">Quiz 1</Link>
+                            </li>
+                            <li>
+                                <Link href="/lecture">Lecture 2</Link>
+                            </li>
+                            <li>
+                                <Link href="/lecture">Quiz 2</Link>
+                            </li>
                         </ul>
                     </div>
                 )}
@@ -51,8 +60,12 @@ const Courses = () => {
                 {openDropdowns.CS1002 && (
                     <div className={styles.dropdownContent}>
                         <ul>
-                            <li>Lecture 1</li>
-                            <li>Quiz 1</li>
+                            <li>
+                                <Link href="/lecture">Lecture 1</Link>
+                            </li>
+                            <li>
+                                <Link href="/lecture">Quiz 1</Link>
+                            </li>
                         </ul>
                     </div>
                 )}
@@ -68,8 +81,12 @@ const Courses = () => {
                 {openDropdowns.CS1003 && (
                     <div className={styles.dropdownContent}>
                         <ul>
-                            <li>Lecture 1</li>
-                            <li>Quiz 1</li>
+                            <li>
+                                <Link href="/lecture">Lecture 1</Link>
+                            </li>
+                            <li>
+                                <Link href="/lecture">Quiz 1</Link>
+                            </li>
                         </ul>
                     </div>
                 )}
@@ -85,8 +102,12 @@ const Courses = () => {
                 {openDropdowns.CS1004 && (
                     <div className={styles.dropdownContent}>
                         <ul>
-                            <li>Lecture 1</li>
-                            <li>Quiz 1</li>
+                            <li>
+                                <Link href="/lecture">Lecture 1</Link>
+                            </li>
+                            <li>
+                                <Link href="/lecture">Quiz 1</Link>
+                            </li>
                         </ul>
                     </div>
                 )}
@@ -102,8 +123,12 @@ const Courses = () => {
                 {openDropdowns.CS1005 && (
                     <div className={styles.dropdownContent}>
                         <ul>
-                            <li>Lecture 1</li>
-                            <li>Quiz 1</li>
+                            <li>
+                                <Link href="/lecture">Lecture 1</Link>
+                            </li>
+                            <li>
+                                <Link href="/lecture">Quiz 1</Link>
+                            </li>
                         </ul>
                     </div>
                 )}
