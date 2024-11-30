@@ -1,70 +1,223 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    font-family: Arial, sans-serif;
-}
-
-.h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
+    font-family: 'Open Sans', sans-serif;
     color: #333;
-    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    padding-bottom: 80px;
 }
 
-.video-section {
+.title {
+    font-size: 2.5rem;
+    color: #2b3a4a;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #d8e3e7;
+    border-radius: 10px;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.courseTitle {
+    font-size: 1.8rem;
+    color: #2b3a4a;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.resourcesShared {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #536878;
+}
+
+.resources {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+    gap: 20px;
     margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.video-container {
-    flex: 2;
-    margin-right: 20px;
-    display: flex;
-}
-
-.video-player {
-    width: 800px;
-    height: 450px;
-    border-radius: 12px;
-}
-
-.rating-container {
-    flex: 1;
+.resource {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 25px;
-}
-
-.student-count {
-    font-size: 1.5rem;
-    color: #45a098;
-}
-
-.rating-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.rating-button {
-    padding: 15px 30px;
-    background-color: #afefe7;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 60px;
-    cursor: pointer;
-    font-size: 18px;
-    width: 180px;
+    align-items: center;
     text-align: center;
-    margin-left: 40px;
-    font-weight: bold;
+    background-color: #f5f7fa;
+    padding: 15px;
+    border-radius: 8px;
+    width: 120px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.rating-button:hover {
-    background-color: #85c6bf;
+.resource:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    font-size: 50px;
+    color: #2b3a4a;
+    margin-bottom: 10px;
+}
+
+.uploadBtn {
+    background-color: #fde3cf;
+    border: none;
+    color: #2b3a4a;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.uploadBtn:hover {
+    background-color: #fac7a1;
+}
+
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(43, 58, 74, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 500px;
+    max-width: 90%;
+    box-sizing: border-box;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.closeButton {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #536878;
+}
+
+.closeButton:hover {
+    color: #2b3a4a;
+}
+
+.modalTitle {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #2b3a4a;
+    font-weight: 600;
+}
+
+.uploadContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.resourceNameInput {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid #d8e3e7;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.uploadBox {
+    width: 100%;
+    max-width: 400px;
+    border: 2px dashed #d8e3e7;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    color: #536878;
+    font-size: 1rem;
+    background-color: #f5f7fa;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.uploadBox:hover {
+    background-color: #eaf0f6;
+}
+
+.uploadBox p {
+    margin: 0;
+}
+
+.chooseFileBtn {
+    background: none;
+    border: none;
+    color: #fac7a1;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+.chooseFileBtn:hover {
+    color: #2b3a4a;
+}
+
+.uploadIcon {
+    font-size: 60px;
+    color: #2b3a4a;
+    margin-bottom: 15px;
+}
+
+.modalUploadBtn {
+    background-color: #fde3cf;
+    border: none;
+    color: #2b3a4a;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modalUploadBtn:hover {
+    background-color: #fac7a1;
 }

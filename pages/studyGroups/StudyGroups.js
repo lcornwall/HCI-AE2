@@ -7,9 +7,9 @@ export default function StudyGroups() {
     const [showPopup, setShowPopup] = useState(false);
 
     const students = [
-        { name: 'Harriet Du Bois', courses: ['Human Computer Interaction', 'Machine Learning', 'Data Fundamentals'] },
+        { name: 'Harrier Du Bois', courses: ['Human Computer Interaction', 'Machine Learning', 'Data Fundamentals'] },
         { name: 'Kim Kitsuragi', courses: ['Data Fundamentals', 'Mobile HCI'] },
-        { name: 'Harry King', courses: ['Human Computer Interaction', 'Artificial Intelligence', 'Operating Systems'] },
+        { name: 'Klaasje Amandou', courses: ['Human Computer Interaction', 'Artificial Intelligence', 'Operating Systems'] },
     ];
 
     const handleSelectStudent = (studentName) => {
