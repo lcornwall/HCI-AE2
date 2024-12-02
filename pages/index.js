@@ -1,31 +1,24 @@
-import Link from 'next/link';
+import { useRouter } from 'next/router';
+import styles from './DashBoard.module.css';
 
-export default function Dashboard() {
+export default function Home() {
+  const router = useRouter();
+
   return (
-    <div>
-
-      <h1>Landing Page/Dashboard</h1>
-
-      <button>
-        <Link href="/studyGroups">
-          Go to Study Groups
-        </Link>
+    <div className={styles.container}>
+      <h1 className={styles.h1}>Welcome</h1>
+      <button
+        onClick={() => router.push('/login')}
+        className={styles.button}
+      >
+        Login
       </button>
-
-
-      <button>
-        <Link href="/resourceSharing">
-          Go to Resource Sharing
-        </Link>
+      <button
+        onClick={() => router.push('/signup')}
+        className={styles.button}
+      >
+        Signup
       </button>
-
-      <button>
-        <Link href="/resourceSharing">
-          Go to Courses
-        </Link>
-      </button>
-
-
     </div>
   );
 }
