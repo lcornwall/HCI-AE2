@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
+import styles from './Signup.module.css';
 
 export default function Signup() {
     const [username, setUsername] = useState('');
@@ -16,18 +17,19 @@ export default function Signup() {
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+        <div className={styles.container}>
             <h1>Signup</h1>
             <input
                 type="text"
                 placeholder="Choose a username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                style={{ padding: '10px', margin: '10px 0', width: '200px' }}
+                className={styles.input}
             />
-            <button onClick={handleSignup} style={{ padding: '10px', width: '100px' }}>
+            <button onClick={handleSignup} className={styles.button}>
                 Signup
             </button>
         </div>
     );
 }
+

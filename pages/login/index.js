@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
+import styles from './Login.module.css';
 
 export default function Login() {
     const [username, setUsername] = useState('');
@@ -16,16 +17,16 @@ export default function Login() {
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+        <div className={styles.container}>
             <h1>Login</h1>
             <input
                 type="text"
                 placeholder="Enter your username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                style={{ padding: '10px', margin: '10px 0', width: '200px' }}
+                className={styles.input}
             />
-            <button onClick={handleLogin} style={{ padding: '10px', width: '100px' }}>
+            <button onClick={handleLogin} className={styles.button}>
                 Login
             </button>
         </div>
