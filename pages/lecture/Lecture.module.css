@@ -37,12 +37,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 25px;
 }
 
 .student-count {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #45a098;
+    margin: none;
 }
 
 .rating-buttons {
@@ -58,7 +58,7 @@
     border: none;
     border-radius: 60px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     width: 180px;
     text-align: center;
     margin-left: 40px;
