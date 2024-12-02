@@ -1,52 +1,123 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    padding: 20px 40px 80px 40px;
 }
 
-.h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+.title {
+    font-size: 2.5rem;
+    color: #2b3a4a;
+    margin-bottom: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.coursesList {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .course {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .courseBtn {
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     text-align: left;
-    background-color: #afefe7;
-    border: none;
-    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #d8e3e7;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.2rem;
+    color: #2b3a4a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
-.courseBtn:hover {
-    background-color: #85c6bf;
+.courseBtn:hover,
+.courseBtn:focus {
+    background-color: #f0f4f8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.courseBtn:focus {
+    outline: none;
+    border-color: #85c6bf;
+}
+
+.icon {
+    font-size: 1.2rem;
+    color: #536878;
+    transition: transform 0.3s ease;
+}
+
+.iconOpen {
+    transform: rotate(180deg);
 }
 
 .dropdownContent {
-    display: block;
-    margin-top: 5px;
-    padding: 10px;
-    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #ffffff;
+    border-left: 1px solid #d8e3e7;
+    border-right: 1px solid #d8e3e7;
+    border-bottom: 1px solid #d8e3e7;
+    border-radius: 0 0 10px 10px;
+}
+
+.dropdownContent.open {
+    max-height: 500px; /* Adjust as needed */
 }
 
 .dropdownContent ul {
-    padding: 0;
+    list-style: none;
+    padding: 0 20px;
     margin: 0;
 }
 
 .dropdownContent li {
-    padding: 8px 0;
-    font-size: 0.9em;
-    color: #333;
+    padding: 15px 0;
+    font-size: 1rem;
+    color: #2b3a4a;
+    border-bottom: 1px solid #e0e6eb;
 }
 
-.dropdownContent li:hover {
-    background-color: #eaeaea;
+.dropdownContent li:last-child {
+    border-bottom: none;
+}
+
+.dropdownContent li a {
+    text-decoration: none;
+    color: #2b3a4a;
+    transition: color 0.3s ease;
+}
+
+.dropdownContent li a:hover,
+.dropdownContent li a:focus {
+    color: #536878;
+}
+
+.dropdownContent li a:focus {
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    .courseBtn {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    .dropdownContent li {
+        padding: 12px 0;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
 }

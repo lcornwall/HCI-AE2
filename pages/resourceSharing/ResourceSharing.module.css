@@ -24,7 +24,7 @@
     padding: 30px;
     width: 90%;
     max-width: 800px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -39,6 +39,34 @@
     font-size: 1.1rem;
     margin-bottom: 20px;
     color: #536878;
+}
+
+.sortButtons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.sortButtons span {
+    font-size: 1rem;
+    color: #536878;
+}
+
+.sortBtn {
+    background-color: #e0e7ff;
+    border: none;
+    color: #2b3a4a;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sortBtn:hover {
+    background-color: #c7d2fe;
 }
 
 .resources {
@@ -57,7 +85,7 @@
     background-color: #f5f7fa;
     padding: 15px;
     border-radius: 8px;
-    width: 120px;
+    width: 150px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -71,6 +99,16 @@
     font-size: 50px;
     color: #2b3a4a;
     margin-bottom: 10px;
+}
+
+.resourceName {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.uploaderName {
+    font-size: 0.9rem;
+    color: #536878;
 }
 
 .uploadBtn {

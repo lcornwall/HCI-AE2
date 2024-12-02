@@ -2,15 +2,55 @@ import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Courses.module.css';
 import NavBar from '../../components/NavBar.js';
+import { FaChevronDown } from 'react-icons/fa';
 
 const Courses = () => {
-    const [openDropdowns, setOpenDropdowns] = useState({
-        CS1001: false,
-        CS1002: false,
-        CS1003: false,
-        CS1004: false,
-        CS1005: false,
-    });
+    const [openDropdowns, setOpenDropdowns] = useState({});
+
+    const courses = [
+        {
+            id: 'CS1001',
+            title: 'CS1001 Database Systems 2024/25',
+            items: [
+                { name: 'Lecture 1', link: '/lecture' },
+                { name: 'Quiz 1', link: '/lecture' },
+                { name: 'Lecture 2', link: '/lecture' },
+                { name: 'Quiz 2', link: '/lecture' },
+            ],
+        },
+        {
+            id: 'CS1002',
+            title: 'CS1002 Machine Learning 2024/25',
+            items: [
+                { name: 'Lecture 1', link: '/lecture' },
+                { name: 'Quiz 1', link: '/lecture' },
+            ],
+        },
+        {
+            id: 'CS1003',
+            title: 'CS1003 Data Fundamentals 2024/25',
+            items: [
+                { name: 'Lecture 1', link: '/lecture' },
+                { name: 'Quiz 1', link: '/lecture' },
+            ],
+        },
+        {
+            id: 'CS1004',
+            title: 'CS1004 Mobile HCI 2024/25',
+            items: [
+                { name: 'Lecture 1', link: '/lecture' },
+                { name: 'Quiz 1', link: '/lecture' },
+            ],
+        },
+        {
+            id: 'CS1005',
+            title: 'CS1005 Artificial Intelligence 2024/25',
+            items: [
+                { name: 'Lecture 1', link: '/lecture' },
+                { name: 'Quiz 1', link: '/lecture' },
+            ],
+        },
+    ];
 
     const handleDropdownToggle = (courseId) => {
         setOpenDropdowns((prevState) => ({
@@ -20,118 +60,38 @@ const Courses = () => {
     };
 
     return (
-        <div className={styles.coursesContainer}>
-            <h2>Your Courses</h2>
+        <div className={styles.container}>
+            <h1 className={styles.title}>Your Courses</h1>
 
-            <div className={styles.course}>
-                <button
-                    className={styles.courseBtn}
-                    onClick={() => handleDropdownToggle('CS1001')}
-                >
-                    CS1001 Database Systems 2024/25
-                </button>
-                {openDropdowns.CS1001 && (
-                    <div className={styles.dropdownContent}>
-                        <ul>
-                            <li>
-                                <Link href="/lecture">Lecture 1</Link>
-                            </li>
-                            <li>
-                                <Link href="/lecture">Quiz 1</Link>
-                            </li>
-                            <li>
-                                <Link href="/lecture">Lecture 2</Link>
-                            </li>
-                            <li>
-                                <Link href="/lecture">Quiz 2</Link>
-                            </li>
-                        </ul>
+            <div className={styles.coursesList}>
+                {courses.map((course) => (
+                    <div className={styles.course} key={course.id}>
+                        <button
+                            className={styles.courseBtn}
+                            onClick={() => handleDropdownToggle(course.id)}
+                        >
+                            <span>{course.title}</span>
+                            <FaChevronDown
+                                className={`${styles.icon} ${
+                                    openDropdowns[course.id] ? styles.iconOpen : ''
+                                }`}
+                            />
+                        </button>
+                        <div
+                            className={`${styles.dropdownContent} ${
+                                openDropdowns[course.id] ? styles.open : ''
+                            }`}
+                        >
+                            <ul>
+                                {course.items.map((item, index) => (
+                                    <li key={index}>
+                                        <Link href={item.link}>{item.name}</Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
-                )}
-            </div>
-
-            <div className={styles.course}>
-                <button
-                    className={styles.courseBtn}
-                    onClick={() => handleDropdownToggle('CS1002')}
-                >
-                    CS1002 Machine Learning 2024/25
-                </button>
-                {openDropdowns.CS1002 && (
-                    <div className={styles.dropdownContent}>
-                        <ul>
-                            <li>
-                                <Link href="/lecture">Lecture 1</Link>
-                            </li>
-                            <li>
-                                <Link href="/lecture">Quiz 1</Link>
-                            </li>
-                        </ul>
-                    </div>
-                )}
-            </div>
-
-            <div className={styles.course}>
-                <button
-                    className={styles.courseBtn}
-                    onClick={() => handleDropdownToggle('CS1003')}
-                >
-                    CS1003 Data Fundamentals 2024/25
-                </button>
-                {openDropdowns.CS1003 && (
-                    <div className={styles.dropdownContent}>
-                        <ul>
-                            <li>
-                                <Link href="/lecture">Lecture 1</Link>
-                            </li>
-                            <li>
-                                <Link href="/lecture">Quiz 1</Link>
-                            </li>
-                        </ul>
-                    </div>
-                )}
-            </div>
-
-            <div className={styles.course}>
-                <button
-                    className={styles.courseBtn}
-                    onClick={() => handleDropdownToggle('CS1004')}
-                >
-                    CS1004 Mobile HCI 2024/25
-                </button>
-                {openDropdowns.CS1004 && (
-                    <div className={styles.dropdownContent}>
-                        <ul>
-                            <li>
-                                <Link href="/lecture">Lecture 1</Link>
-                            </li>
-                            <li>
-                                <Link href="/lecture">Quiz 1</Link>
-                            </li>
-                        </ul>
-                    </div>
-                )}
-            </div>
-
-            <div className={styles.course}>
-                <button
-                    className={styles.courseBtn}
-                    onClick={() => handleDropdownToggle('CS1005')}
-                >
-                    CS1005 Artificial Intelligence 2024/25
-                </button>
-                {openDropdowns.CS1005 && (
-                    <div className={styles.dropdownContent}>
-                        <ul>
-                            <li>
-                                <Link href="/lecture">Lecture 1</Link>
-                            </li>
-                            <li>
-                                <Link href="/lecture">Quiz 1</Link>
-                            </li>
-                        </ul>
-                    </div>
-                )}
+                ))}
             </div>
 
             <NavBar />
